@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  background: hsl(200 50% 5%);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.ripple-button {
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+  appearance: none;
+  font-size: 3rem;
+  padding: 0.5em 2em;
+  text-transform: uppercase;
+  color: #fff;
+  background: #114ea1;
+  border-radius: 0.125em;
+  cursor: pointer;
+  isolation: isolate;
+  overflow: hidden;
+  border: none;
+  letter-spacing: 0.025em;
+  word-spacing: 0.2em;
+}
+.ripple-button::before {
+  position: absolute;
+  content: "";
+  width: 30%;
+  z-index: -1;
+  background: radial-gradient(rgba(255, 255, 255, 1), transparent);
+  backdrop-filter: blur(20px);
+  opacity: 0.25;
+  aspect-ratio: 1/ 1;
+  border-radius: 50%;
+  transition: transform 100ms;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%) scale(0);
+}
+.ripple-button.active::before {
+  transform: translate(-50%, -50%) scale(1);
+}
