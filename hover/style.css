@@ -5,6 +5,10 @@ body {
   display: grid;
   place-items: center;
 }
+.container {
+  display: grid;
+  gap: 4em;
+}
 .ripple-button {
   display: inline-grid;
   place-items: center;
@@ -23,6 +27,7 @@ body {
   letter-spacing: 0.025em;
   word-spacing: 0.2em;
 }
+/* Hover button */
 .ripple-button::before {
   position: absolute;
   content: "";
@@ -38,6 +43,7 @@ body {
   left: var(--x);
   transform: translate(-50%, -50%) scale(0);
 }
+
 .ripple-button.active::before {
   transform: translate(-50%, -50%) scale(1);
 }

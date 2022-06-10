@@ -1,4 +1,6 @@
-const rippleButton = document.querySelector(".ripple-button");
+// INFO: for ripple hover button
+
+const rippleButtonHover = document.querySelector(".ripple-button-hover");
 
 const mouseMoveToCustomProps = function (event, element) {
   let possX = event.offsetX;
@@ -10,9 +12,8 @@ const mouseMoveToCustomProps = function (event, element) {
   element.addEventListener("mouseleave", () => {
     element.classList.remove("active");
   });
-  //   element.style.transform = `translate(-50%, -50%) scale(1)`;
 };
 
-rippleButton.addEventListener("mousemove", (e) => {
-  mouseMoveToCustomProps(e, rippleButton);
+rippleButtonHover.addEventListener("mousemove", function (e) {
+  mouseMoveToCustomProps(e, this);
 });
